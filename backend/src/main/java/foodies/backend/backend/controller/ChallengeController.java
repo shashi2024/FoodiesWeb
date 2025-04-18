@@ -21,8 +21,8 @@ public class ChallengeController {
     }
 
     @PostMapping
-    public Challenge createChallenge(@RequestBody Challenge challenge) {
-        return challengeService.createChallenge(challenge);
+    public Challenge createChallenge(@RequestBody Challenge challenges) {
+        return challengeService.createChallenge(challenges);
     }
 
     @DeleteMapping("/{id}")
