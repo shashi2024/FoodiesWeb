@@ -123,7 +123,7 @@ export default function ChallengePage() {
                     </button>
                     <button
                       onClick={() => handleDelete(challenge.id)}
-                      className="bg-purple-600 hover:bg-gray-700 text-white px-2 py-1 rounded text-sm"
+                      className="bg-black-600 hover:bg-gray-700 text-white px-2 py-1 rounded text-sm"
                     >
                       Edit
                     </button>
