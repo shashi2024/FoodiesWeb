@@ -70,4 +70,39 @@ public class ChallengeService {
 
         return challengeDate.isBefore(today) || (challengeDate.isEqual(today) && now.isAfter(end));
     }
+
+    // public Challenge pauseChallenge(String id) {
+    //     // Update the challenge status to "pause"
+    //     Challenge challenge = challengeRepository.findById(id).orElseThrow();
+    //     challenge.setStatus("pause");
+    //     return challengeRepository.save(challenge);
+    // }
+
+    public Challenge pauseChallenge(String id) {
+        Optional<Challenge> optionalChallenge = challengeRepository.findById(id);
+        if (optionalChallenge.isPresent()) {
+            Challenge challenge = optionalChallenge.get();
+            challenge.setStatus("paused"); // or "pending" based on your needs
+            return challengeRepository.save(challenge);
+        } else {
+            throw new RuntimeException("Challenge not found with ID: " + id);
+        }
+    }
+    
+
+    public Challenge updateChallenge(String id, Challenge updatedChallenge) {
+        Challenge existingChallenge = challengeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Challenge not found with id: " + id));
+    
+        // Update fields (you can add more as needed)
+        existingChallenge.setStatus(updatedChallenge.getStatus());
+        existingChallenge.setStartDate(updatedChallenge.getStartDate());
+        existingChallenge.setStartTime(updatedChallenge.getStartTime());
+        existingChallenge.setEndTime(updatedChallenge.getEndTime());
+    
+        // Save the updated challenge
+        return challengeRepository.save(existingChallenge);
+    }
+    
+    
 }

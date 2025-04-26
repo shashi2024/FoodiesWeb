@@ -1,34 +1,3 @@
-// import React from "react";
-
-// const VideoSelectionPage = () => {
-//   return (
-//     <div className="p-6 max-w-4xl mx-auto">
-//       <h2 className="text-2xl font-semibold mb-4">Select a Recipe Video</h2>
-
-//       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-//         {recipes.map((recipe) => (
-//           <div
-//             key={recipe.id}
-//             onClick={() => setSelected(recipe)}
-//             className={`cursor-pointer border rounded-lg p-2 shadow hover:shadow-lg transition ${
-//               selected?.id === recipe.id
-//                 ? "border-green-500 ring-2 ring-green-400"
-//                 : ""
-//             }`}
-//           >
-//             <video className="w-full h-40 object-cover rounded" controls>
-//               <source src={recipe.videoUrl} type="video/mp4" />
-//               Your browser does not support the video tag.
-//             </video>
-//             <p className="mt-2 text-center font-medium">{recipe.name}</p>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default VideoSelectionPage;
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
