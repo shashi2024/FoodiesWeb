@@ -1,32 +1,11 @@
-// import React, { useEffect, useState } from "react";
-// import axios from "axios";
-
-// function App() {
-//   const [message, setMessage] = useState("");
-
-//   useEffect(() => {
-//     axios
-//       .get("/api/hello")
-//       .then((response) => setMessage(response.data))
-//       .catch((error) => console.error(error));
-//   }, []);
-
-//   return (
-//     <div>
-//       <h1 className="text-3xl font-bold underline">Hello world!</h1>
-//       <h1>Spring Boot & React App</h1>
-//       <p>{message}</p>
-//     </div>
-//   );
-// }
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import ChallengePage from "./pages/ChallengePage";
-import NewChallenge from "./pages/NewChallenge";
-import ActiveChallenge from "./pages/ActiveChallenge";
-import ViewChallenge from "./pages/ViewChallenge";
-import VideoSelectionPage from "./pages/VideoSelectionPage";
+import ChallengePage from "./pages/Challenges/ChallengePage";
+import NewChallenge from "./pages/Challenges/NewChallenge";
+import ActiveChallenge from "./pages/Challenges/ActiveChallenge";
+import ViewChallenge from "./pages/Challenges/ViewChallenge";
+import VideoSelectionPage from "./pages/Challenges/VideoSelectionPage";
+import EditChallengePage from "./pages/Challenges/EditChallengePage";
 
 export default function App() {
   return (
@@ -38,6 +17,8 @@ export default function App() {
         <Route path="/challenge/:id/start" element={<ActiveChallenge />} />
         <Route path="/challenge/:id/view" element={<ViewChallenge />} />
         <Route path="/video-selection" element={<VideoSelectionPage />} />
+        <Route path="/edit-challenge/:id" element={<EditChallengePage />} />
+        {/* Add more routes as needed */}
       </Routes>
     </BrowserRouter>
   );
